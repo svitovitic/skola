@@ -1,54 +1,51 @@
 #include <iostream>
-
 using namespace std;
 
-
-
-double Zbroj(double a,double b)
-{
-    double zb = a+b;
-    return zb;
-
+double zbroji(double a, double b) {
+    return a + b;
 }
 
-double Oduzmi(double a,double b)
-{
-    double od = a-b;
-    return od;
-
+double oduzmi(double a, double b) {
+    return a - b;
+    
+    
 }
 
-double Pomnozi(double a,double b)
-{
-    double pm = a*b;
-    return pm;
-
+double pomnozi(double a, double b) {
+    return a * b;
 }
 
-double Podijeli(double a,double b)
-{
-    if(a==0 || b==0) cout << "Nijedan broj ne smije biti 0" << endl;
-    else
-        {
-        double pd = a/b;
-        return pd;
-        }
-
+double podijeli(double a, double b) {
+    return a / b;
 }
 
-void IspisiRezultate(double a,double b)
-{
-    cout << Zbroj(a,b) << endl;
-    cout << Oduzmi(a,b) << endl;
-    cout << Pomnozi(a,b) << endl;
-    cout << Podijeli(a,b) << endl;
-
+void ispisiRezultat(double rezultat) {
+    cout << rezultat << endl;
 }
 
+int main() {
+    double a, b;
 
+    cout << "Unesi dva broja podijeljena razmakom: ";
+    cin >> a >> b;
 
-int main()
-{
-    IspisiRezultate(4,2);
+    cout << "Zbroj: ";
+    ispisiRezultat(zbroji(a, b));
+
+    cout << "Razlika: ";
+    ispisiRezultat(oduzmi(a, b));
+
+    cout << "Umnozak: ";
+    ispisiRezultat(pomnozi(a, b));
+    
+    if(b!=0)
+    { 
+    cout << "Kolicnik: "; 
+    ispisiRezultat(podijeli(a, b));
+    }
+    else cout << "Drugi broj je nula";
+
+    
+
     return 0;
 }
